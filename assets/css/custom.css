@@ -954,3 +954,193 @@ main p a:hover,
     animation: none;
   }
 }
+
+
+/*==============================================================
+  LD11 – KONTAKTŲ FORMA
+==============================================================*/
+
+#kontaktuForma .form-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  color: var(--default-color);
+}
+
+#kontaktuForma .form-control {
+  background-color: var(--background-color);
+  border: 2px solid rgba(255, 111, 174, 0.25);
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 11px 14px;
+}
+
+#kontaktuForma .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 111, 174, 0.2);
+}
+
+/* Klaidos ir teisingos reikšmės rėmeliai */
+#kontaktuForma .form-control.neteisingas {
+  border-color: #ff5c5c;
+  box-shadow: 0 0 0 3px rgba(255, 92, 92, 0.18);
+}
+
+#kontaktuForma .form-control.teisingas {
+  border-color: #7fe3b0;
+}
+
+.klaidos-tekstas {
+  min-height: 20px;
+  margin-top: 5px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ff8a8a;
+}
+
+/* Vertinimo klausimai – Grid, 3 stulpeliai */
+.vertinimai {
+  padding: 18px;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+}
+
+.vertinimai legend {
+  float: none;
+  width: auto;
+  padding: 0 8px;
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  color: var(--accent-light);
+}
+
+.vertinimu-tinklelis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+/* Mygtukai „Siųsti“ ir „Išvalyti“ */
+.formos-mygtukai {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+#kontaktuForma .btn {
+  min-width: 150px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+  color: #2a0f1d;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#kontaktuForma .btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 111, 174, 0.35);
+}
+
+#kontaktuForma .btn-isvalyti {
+  background: transparent;
+  color: var(--accent-light);
+  border-color: var(--accent-color);
+}
+
+/* Neaktyvus mygtukas */
+#kontaktuForma .btn:disabled {
+  background: #3a2230;
+  color: #9c7f8d;
+  border-color: #3a2230;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 1;
+}
+
+/* Pateiktų duomenų sritis */
+.formos-rezultatai {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  border-left: 5px solid #7fe3b0;
+  background-color: var(--background-color);
+}
+
+.formos-rezultatai h4 {
+  margin-bottom: 14px;
+  color: #7fe3b0;
+}
+
+.formos-rezultatai p {
+  margin-bottom: 6px;
+  color: var(--default-color);
+}
+
+.formos-rezultatai .vidurkis {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: rgba(255, 111, 174, 0.12);
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+@media (max-width: 767px) {
+  .vertinimu-tinklelis {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Kontaktinės informacijos blokas – šviesus tekstas ant tamsaus fono */
+.contact .info-box h3,
+.contact .info-item .content h4 {
+  color: #ffffff;
+}
+
+.contact .info-item .icon-box {
+  background-color: rgba(255, 111, 174, 0.15);
+}
+
+.contact .info-item .icon-box i {
+  color: var(--accent-color);
+}
+
+.contact .info-item:hover .icon-box i {
+  color: #2a0f1d;
+}
+
+/* Vertinimo klausimų etiketės vienodo aukščio, kad laukai būtų vienoje linijoje */
+.vertinimu-tinklelis {
+  align-items: start;
+}
+
+.vertinimu-tinklelis .form-label {
+  display: block;
+  min-height: 2.9em;
+}
+
+/* Rezultatų eilutės arčiau viena kitos */
+.formos-rezultatai p {
+  line-height: 1.5;
+}
+
+/* Šablono .contact .contact-form p taisyklė stipresnė, todėl nurodome tikslesnį selektorių */
+.contact .contact-form .formos-rezultatai p {
+  margin-bottom: 6px;
+  color: var(--default-color);
+}
+
+.contact .contact-form .formos-rezultatai .vidurkis {
+  margin-top: 14px;
+  color: var(--accent-light);
+}

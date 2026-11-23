@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - FolioOne Bootstrap Template</title>
+  <title>Mano CV – Kontaktai</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -79,86 +79,126 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
+        <h2>Kontaktai</h2>
+        <p>Užpildykite formą ir įvertinkite svetainę – jūsų atsiliepimas padės ją tobulinti.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-4 g-lg-5">
-          <div class="col-lg-5">
+          <div class="col-lg-4">
             <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-              <h3>Contact Info</h3>
-              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+              <h3>Kontaktinė informacija</h3>
+              <p>Esu atvira bendradarbiavimui, praktikos pasiūlymams ir korepetavimo užklausoms.</p>
 
               <div class="info-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
                   <i class="bi bi-geo-alt"></i>
                 </div>
                 <div class="content">
-                  <h4>Our Location</h4>
-                  <p>A108 Adam Street</p>
-                  <p>New York, NY 535022</p>
+                  <h4>Vieta</h4>
+                  <p>Vilnius, Lietuva</p>
                 </div>
               </div>
 
               <div class="info-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
-                  <i class="bi bi-telephone"></i>
+                  <i class="bi bi-mortarboard"></i>
                 </div>
                 <div class="content">
-                  <h4>Phone Number</h4>
-                  <p>+1 5589 55488 55</p>
-                  <p>+1 6678 254445 41</p>
+                  <h4>Studijos</h4>
+                  <p>VILNIUS TECH, Informacinių sistemų inžinerija</p>
                 </div>
               </div>
 
               <div class="info-item" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
+                  <i class="bi bi-clock"></i>
                 </div>
                 <div class="content">
-                  <h4>Email Address</h4>
-                  <p>info@example.com</p>
-                  <p>contact@example.com</p>
+                  <h4>Atsakymo laikas</h4>
+                  <p>Per 1–2 darbo dienas</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-7">
+          <div class="col-lg-8">
             <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <h3>Get In Touch</h3>
-              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+              <h3>Susisiekite</h3>
+              <p>Visi laukai privalomi. Mygtukas „Siųsti“ tampa aktyvus, kai visi laukai užpildyti teisingai.</p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="row gy-4">
+              <form id="kontaktuForma" novalidate>
+                <div class="row gy-3">
 
                   <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    <label for="vardas" class="form-label">Vardas</label>
+                    <input type="text" id="vardas" name="vardas" class="form-control" placeholder="Vardenis" required>
+                    <div class="klaidos-tekstas" id="vardas-klaida"></div>
                   </div>
 
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <div class="col-md-6">
+                    <label for="pavarde" class="form-label">Pavardė</label>
+                    <input type="text" id="pavarde" name="pavarde" class="form-control" placeholder="Pavardenis" required>
+                    <div class="klaidos-tekstas" id="pavarde-klaida"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="elpastas" class="form-label">El. paštas</label>
+                    <input type="email" id="elpastas" name="elpastas" class="form-control" placeholder="vardenis@mail.lt" required>
+                    <div class="klaidos-tekstas" id="elpastas-klaida"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="telefonas" class="form-label">Telefono numeris</label>
+                    <input type="tel" id="telefonas" name="telefonas" class="form-control" placeholder="+370 6xx xxxxx" inputmode="numeric" maxlength="14" required>
+                    <div class="klaidos-tekstas" id="telefonas-klaida"></div>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    <label for="adresas" class="form-label">Adresas</label>
+                    <input type="text" id="adresas" name="adresas" class="form-control" placeholder="Gatvė, namo nr., miestas" required>
+                    <div class="klaidos-tekstas" id="adresas-klaida"></div>
                   </div>
 
+                  <!-- 3 vertinimo klausimai (skalė 1–10) -->
                   <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    <fieldset class="vertinimai">
+                      <legend>Įvertinkite nuo 1 iki 10</legend>
+                      <div class="vertinimu-tinklelis">
+                        <div>
+                          <label for="klausimas1" class="form-label">1. Kaip vertinate svetainės dizainą?</label>
+                          <input type="number" id="klausimas1" name="klausimas1" class="form-control" min="1" max="10" placeholder="1–10" required>
+                          <div class="klaidos-tekstas" id="klausimas1-klaida"></div>
+                        </div>
+                        <div>
+                          <label for="klausimas2" class="form-label">2. Ar informacija buvo aiški ir naudinga?</label>
+                          <input type="number" id="klausimas2" name="klausimas2" class="form-control" min="1" max="10" placeholder="1–10" required>
+                          <div class="klaidos-tekstas" id="klausimas2-klaida"></div>
+                        </div>
+                        <div>
+                          <label for="klausimas3" class="form-label">3. Ar rekomenduotumėte mano paslaugas?</label>
+                          <input type="number" id="klausimas3" name="klausimas3" class="form-control" min="1" max="10" placeholder="1–10" required>
+                          <div class="klaidos-tekstas" id="klausimas3-klaida"></div>
+                        </div>
+                      </div>
+                    </fieldset>
                   </div>
 
-                  <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit" class="btn">Send Message</button>
+                  <div class="col-12 formos-mygtukai">
+                    <button type="submit" id="siustiMygtukas" class="btn" disabled>Siųsti</button>
+                    <button type="button" id="isvalytiMygtukas" class="btn btn-isvalyti">Išvalyti</button>
                   </div>
 
                 </div>
               </form>
+
+              <!-- Čia JavaScript išveda pateiktus duomenis ir vidurkį -->
+              <div id="formosRezultatai" class="formos-rezultatai" hidden>
+                <h4>Pateikti duomenys</h4>
+                <div id="rezultatuSarasas"></div>
+                <p id="vidurkis" class="vidurkis"></p>
+              </div>
 
             </div>
           </div>
@@ -214,6 +254,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS File (LD11) -->
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
